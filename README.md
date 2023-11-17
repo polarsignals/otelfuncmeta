@@ -9,7 +9,7 @@ The span processor can either be passed at creation time of the tracer provider.
 ```go
 import (
 	sdktrace "go.opentelemetry.io/otel/sdk/trace"
-    "github.com/polarsignals/otelfuncmeta"
+	"github.com/polarsignals/otelfuncmeta"
 )
 
 func newTracerProvider(t *testing.T, e *testExporter) *sdktrace.TracerProvider {
@@ -25,12 +25,12 @@ Or get registered after creating the tracer provider using `RegisterSpanProcesso
 ```go
 import (
 	sdktrace "go.opentelemetry.io/otel/sdk/trace"
-    "github.com/polarsignals/otelfuncmeta"
+	"github.com/polarsignals/otelfuncmeta"
 )
 
 func newTracerProvider(t *testing.T, e *testExporter) *sdktrace.TracerProvider {
 	tp := sdktrace.NewTracerProvider()
-    tp.RegisterSpanProcessor(otelfuncmeta.NewSpanProcessor())
+	tp.RegisterSpanProcessor(otelfuncmeta.NewSpanProcessor())
 	return tp
 }
 ```
